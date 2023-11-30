@@ -1,7 +1,16 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-function ProductCard (props){
+export interface ProductCardProps {
+   id: number;
+   name: string;
+   price: number;
+   currency: string;
+   category: string;
+   description?: string; 
+ }
+
+const ProductCard  = (props: ProductCardProps) => {
    return( 
       <Link to={`/product/${props.id}`}>
          <div className="product-card">
